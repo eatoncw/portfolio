@@ -1,0 +1,66 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.navbar-light {
+  background: transparent;
+}
+
+.footer a {
+  color: inherit;
+  opacity: 0.8;
+}
+
+.footer a:hover {
+  opacity: 1;
+}
+.container .small {
+  font-size: 70%;
+}
+
+.section {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.section-2 {
+  margin-bottom: 100px;
+}
+
+#intro {
+  background: #1f9e75;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+h1, h5 {
+  color: #f67519;
+}
+
+.display-4 {
+  color: inherit;
+}
+
+.container a {
+  color: #1f9e75;
+}
+
+.project-thumb-link:hover img {
+  opacity: 0.9;
+}
+
+dd p {
+  margin-bottom: 0.5rem;
+}
+
+@media only screen and (max-width: 576px) {
+  .footer span {
+    display: none;
+  }
+  #intro {
+    text-align: center;
+  }
+  .display-4 {
+    font-size: 2.5rem;
+  }
+}
