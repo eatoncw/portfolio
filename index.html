@@ -34,7 +34,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="contact-details">
               <a class="dropdown-item" href="mailto:eaton.cw@gmail.com"><i class="far fa-envelope"></i><span class="pl-2">eaton.cw@gmail.com</span></a>
-              <a class="dropdown-item" href="tel:5034750350"><i class="fas fa-phone"></i><span class="pl-2">503 593 4151<span></a>
+              <a class="dropdown-item" href="tel:5034750350"><i class="fas fa-phone"></i><span class="pl-2">503 475 0350<span></a>
             </div>
           </li>
         </ul>
@@ -43,14 +43,29 @@
     <div id="intro" style="color:#ebf0f6;">
       <div class="container">
         <h1 class="display-4 pb-3">Hi, I'm a full-stack JavaScript and Ruby developer living in Portland, Oregon</h1>
-        <p class="pt-3 mt-3 lead">I like building websites with React.js and using Ruby on Rails to build both API-only and full-stack applications.</p>
-        <p class="lead">I'm experienced with React Native and Heroku.</p>
+        <p class="pt-3 mt-3 lead">I like building websites with React.js and mobile apps with React Native.</p>
+        <p class="lead">I'm experienced with Firebase and Heroku.</p>
       </div>
     </div>
     <div class="container">
       <div id="projects" class="section">
         <h1 class="font-weight-light pt-3">Recent projects</h1>
         <div class="row">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 py-3">
+                <p class="lead m-0">Palms Casino and Resort</br><a href="https://www.palms.com" target="_blank" class="small">Palms Casino and Resort</a></p>
+                <a href="https://www.palms.com" target="_blank" class="project-thumb-link">
+                  <div class="row no-gutters py-1 mb-2">
+                    <div class="col-6">
+                      <img src="img/palms-1.jpg" class="img-fluid" />
+                    </div>
+                    <div class="col-6">
+                      <img src="img/palms-2.jpg" class="img-fluid" />
+                    </div>
+                  </div>
+                </a>
+                <p>I lead on the front-end of the booking for this new website.</p>
+                <p class="text-muted">React.js, Redux, APIs</p>
+              </div>
           <div class="col-12 col-sm-6 col-md-6 col-lg-4 py-3">
             <p class="lead m-0">E-commerce product aggregator</br><a href="https://eatoncw.github.io/designtbl_furniture/" target="_blank" class="small">DesignTbl</a></p>
             <a href="https://eatoncw.github.io/designtbl_furniture/" target="_blank" class="project-thumb-link">
@@ -63,10 +78,9 @@
                 </div>
               </div>
             </a>
-            <p>My main project, built using React.js and RoR. DesignTbl helps users find great prices on home
+            <p>Built using React.js and RoR, DesignTbl helped users find great prices on home
                furniture products.</p>
-            <p>The back-end accesses retailer APIs (and does some web scraping)
-              to aggregate products that are currently on sale which are served to DesignTbl's front-end.</p>
+            <p>The back-end accesses retailer APIs + web scraping to aggregate on-sale products.</p>
             <p class="text-muted">React, Redux, Rails 5 API-only, APIs, Sidekiq, Redis, Heroku</p>
           </div>
           <div class="col-12 col-sm-6 col-md-6 col-lg-4 py-3">
@@ -118,31 +132,12 @@
               <p class="text-muted">Rails 5, S3, APIs, Heroku, Bootstrap 4</p>
             </div>
         </div>
-          <!-- <div class="col-12 col-sm-6 col-md-6 col-lg-4 py-3">
-            <p class="lead m-0">Blog and Recipe Site</br><a href="https://stephaniefoyer.com" target="_blank" class="small">Eat More Raw</a></p>
-            <a href="https://www.designtbl.com" target="_blank" class="project-thumb-link">
-              <div class="row no-gutters py-1 mb-2">
-                <div class="col-6">
-                  <img src="img/projects1_shot1.jpg" class="img-fluid" />
-                </div>
-                <div class="col-6">
-                  <img src="img/projects1_shot2.jpg" class="img-fluid" />
-                </div>
-              </div>
-            </a>
-            <p>Blog and recipe site for raw food diet and lifestyle.</p>
-            <p>Sort of a visual version of Slack where users upload images,
-              tag specific locations, and then have discussions about that location
-              (where they can upload and display more images).</p>
-            <p class="text-muted">Rails 5, WYSIWYG editor, S3, Heroku, ES6, Bootstrap 4</p>
-          </div>
-        </div> -->
       </div>
       <div id="about" class="section-2">
         <h1 class="font-weight-light py-3">About</h1>
         <div class="row pb-3">
           <div class="col-12">
-            <p>In my spare time I run an e-commerce furniture sales aggregator website called <a href="https://www.designtbl.com" target="_blank">DesignTbl</a> and develop portfolio websites for creative professionals.</p>
+            <p>I am co-founder, CPO and lead engineer for <a href="https://tokka.app/" target="_blank">Tokka</a>, an on-demand babysitting mobile app.</p>
             <p>I enjoy the challenges of start-ups and am experienced with wearing many hats throughout a day - from UI design to pitching to business models.
               A couple of years ago I left the construction industry, where I ran my own consultancy for sustainable building design, and started coding.<p>
             <p>I love working with people to find awesome solutions.<p>
@@ -158,10 +153,12 @@
             <p>D3.js</p>
             <p>HTML5</p>
             <p>CSS3</p>
+            <p>PostCSS</p>
             <p>Sass</p>
           </dd>
           <dt class="col-sm-2">Back-end</dt>
           <dd class="col-sm-4">
+            <p>Firebase</p>
             <p>Rails 5</p>
             <p>APIs: building and integration</p>
             <p>Heroku</p>
