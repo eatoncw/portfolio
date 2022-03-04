@@ -1,0 +1,27 @@
+export default {
+  "Front-end": [
+    "JavaScript",
+    "TypeScript",
+    "React.js",
+    "React Native",
+    "Next.js",
+    "Gatsby",
+    "HTML5",
+    "CSS3",
+    "PostCSS",
+    "Sass",
+    "Material-UI",
+  ],
+  "Back-end": [
+    "Node.js",
+    "Express",
+    "Firebase & Google Cloud Platform",
+    "APIs: building and integration",
+    "Docker",
+    "Heroku",
+    "Redis",
+    "Ruby",
+    "Rails",
+    "Rust",
+  ],
+};

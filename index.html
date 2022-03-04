@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="shapes.css">
   <script defer src="https://cdn.jsdelivr.net/npm/kute.js@2.2.2/dist/kute.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
   <script type="module" defer src="./index.js"></script>
 
   <title>christopher eaton portfolio</title>
@@ -26,18 +27,33 @@
       <div class="navbar-collapse" id="navbar-dropdown">
         <ul class="navbar-items">
           <li class="nav-item">
-            <a class="nav-link" href="#projects">Projects</a>
+            <a class="nav-link" href="#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#projects">Projects</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#contact">Contact</a>
           </li>
         </ul>
         <button class="navbar-toggler" type="button">
-          <i class="fa fa-bars"></i>
+          <div class="menu back navbar-icon">
+            <label>
+              <input type="checkbox">
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="30" />
+                <path class="line--1" d="M0 55l14-10c4.7-3.3 9-5 13-5h72" />
+                <path class="line--2" d="M0 50h99" />
+                <path class="line--3" d="M0 45l14 10c4.7 3.3 9 5 13 5h72" />
+              </svg>
+            </label>
+          </div>
         </button>
+      </div>
+      <div class="vertical-nav-menu">
+        hello world
+        <div><button class="menu-close">X</button></div>
+
       </div>
     </nav>
   </header>
@@ -122,37 +138,9 @@
     <section id="skills" class="section-4">
       <div class="content-container">
         <h1 class="section-header animate animate-left">Skills</h1>
-
-        <dl class="row animate animate-opacity">
-          <dt class="col-sm-2">Front-end</dt>
-          <dd class="col-sm-4">
-            <p>JavaScript</p>
-            <p>TypeScript</p>
-            <p>React.js</p>
-            <p>React Native</p>
-            <p>Next.js</p>
-            <p>Gatsby</p>
-            <p>HTML5</p>
-            <p>CSS3</p>
-            <p>PostCSS</p>
-            <p>Sass</p>
-            <p>Material-UI</p>
-          </dd>
-          <dt class="col-sm-2">Back-end</dt>
-          <dd class="col-sm-4">
-            <p>Node.js</p>
-            <p>Express</p>
-            <p>Firebase & Google Cloud Platform</p>
-            <p>APIs: building and integration</p>
-            <p>Docker</p>
-            <p>Heroku</p>
-            <p>Redis</p>
-            <p>Ruby</p>
-            <p>Rails</p>
-            <p>Rust</p>
-          </dd>
-        </dl>
-
+        <div class="skills-container animate animate-opacity">
+          <noscript>You need to support js to view my skills!</noscript>
+        </div>
     </section>
   </main>
   <footer>

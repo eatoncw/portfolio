@@ -1,30 +1,62 @@
 import { html, render } from "https://unpkg.com/lit-html@0.7.1/lit-html.js";
+
 import projects from "./projects.js";
+import skills from "./skills.js";
+
+function renderSkills() {
+  const headers = Object.keys(skills);
+  const skillsTemplate = (header) => html`<div class="skill-container">
+    <p class="skill-head">${header}</p>
+    ${skills[header].map((skill, index) => {
+      return html`<div class="skill-item">
+        <div class="skill-item-wrapper">
+          <p>${skill}</p>
+        </div>
+      </div>`;
+    })}
+  </div>`;
+  const section = html`${Object.keys(skills).map((header) => {
+    return skillsTemplate(header);
+  })}`;
+  render(section, document.querySelector(".skills-container"));
+}
 
 function renderProjects() {
-  const projectTemplate = (project) => html`<div class="grid-item">
-    <p class="lead">${project.title}</p>
-    <a href="${project.titleLinkHref}" target="_blank"
-      >${project.titleLinkName}</a
-    >
-    <a href="${project.imgHref}" target="_blank" class="project-thumb-link">
-      <div>
-        <div class="project-img-container">
-          <img src="img/${project.img}" />
+  const projectTemplate = (project, i) => html`<div
+    class=${project.height === 2
+      ? `animate animate-opacity grid-item grid-item-double`
+      : "animate animate-opacity grid-item grid-item-single"}
+  >
+    <p class="project-head">${project.title}</p>
+    <div class="project-subhead-wrapper">
+      <a class="project-subhead" href="${project.titleLinkHref}" target="_blank"
+        >${project.titleLinkName}</a
+      >
+    </div>
+    <div class="project-content">
+      <a href="${project.imgHref}" target="_blank" class="project-thumb-link">
+        <div>
+          <div class="project-img-container">
+            <img src="img/${project.img}" />
+            ${project.img2 && html`<img src="img/${project.img}" />`}
+          </div>
         </div>
+      </a>
+      <div class="project-description">
+        <p>${project.body}</p>
+        <p class="text-muted">
+          ${project.technologies?.map((tech, i) => {
+            return html`${tech}${i === project.technologies.length - 1
+              ? ""
+              : ", "}`;
+          })}
+        </p>
       </div>
-    </a>
-    <p>${project.body}</p>
-    <p class="text-muted">
-      ${project.technologies?.map((tech, i) => {
-        return html`${tech}${i === project.technologies.length - 1
-          ? ""
-          : ", "}`;
-      })}
-    </p>
+    </div>
   </div> `;
-  const allProjects = html`${projects.map((proj) => {
-    return projectTemplate(proj);
+  const shuffled = _ in window === undefined ? projects : _.shuffle(projects);
+  const allProjects = html`${shuffled.map((proj, i) => {
+    return projectTemplate(proj, i);
   })}`;
   render(allProjects, document.querySelector(".projects-container"));
 }
@@ -116,10 +148,50 @@ function animationObservers() {
   });
 }
 
+function handleHeaderMenu() {
+  let navMenuOpen = false;
+  let autoShow;
+  const checkbox = document.querySelector(".navbar-toggler input");
+  const navMenu = document.querySelector(".vertical-nav-menu");
+
+  function setAutoAnimateNav() {
+    autoShow = setInterval(() => {
+      checkbox.checked = !checkbox.checked;
+    }, 2500);
+  }
+
+  setAutoAnimateNav();
+
+  function openMobileNav() {
+    navMenuOpen = !navMenuOpen;
+    navMenu.classList.toggle("nav-menu-show", navMenuOpen);
+    setTimeout(() => {
+      document.querySelector("body").style.position = navMenuOpen
+        ? "fixed"
+        : "relative";
+    }, 600);
+  }
+
+  document.querySelector(".navbar-toggler").addEventListener("click", (e) => {
+    if (e.target.tagName === "LABEL") return;
+    clearInterval(autoShow);
+    openMobileNav();
+  });
+
+  document.querySelector(".menu-close").addEventListener("click", (e) => {
+    if (e.target.tagName === "LABEL") return;
+    if (checkbox.checked) checkbox.checked = false;
+    setTimeout(setAutoAnimateNav, 2000);
+    openMobileNav();
+  });
+}
+
 (() => {
   let headerObserver;
   renderProjects();
+  renderSkills();
   handleBlobs();
+  handleHeaderMenu();
   new ResizeObserver(() => {
     if (headerObserver) {
       headerObserver.disconnect();
