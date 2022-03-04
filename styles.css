@@ -6,6 +6,13 @@
   --blue: #355c7d;
   --text-black: #0e1111;
   --text-grey: #353839;
+  --main-gradient: linear-gradient(
+      210deg,
+      rgba(246, 114, 128, 0) 0,
+      rgba(246, 114, 128, 0.4) 20%,
+      #fff 100%
+    ),
+    linear-gradient(217deg, var(--light-pink) 0, var(--pink) 50%, #fff 100%);
 }
 
 html {
@@ -82,6 +89,12 @@ header .navbar-items li:not(:last-of-type) {
 
 .head {
   font-family: "Permanent Marker", cursive;
+  padding-bottom: 2rem;
+}
+
+.subhead {
+  padding-top: 2rem;
+  font-size: 1.25rem;
 }
 
 footer {
@@ -127,11 +140,9 @@ footer nav {
 section {
   position: relative;
   overflow-y: hidden;
-  padding-top: 200px;
   padding-bottom: 50px;
   display: flex;
   flex-direction: column;
-  /* min-height: 400px; */
   width: 100%;
 }
 
@@ -139,6 +150,28 @@ section {
   padding-left: 2vw;
   padding-right: 2vw;
   overflow-y: hidden;
+}
+
+.section-header {
+  margin-bottom: 4rem;
+}
+
+.animate-left {
+  margin-left: -200px;
+  transition: all 0.5s ease-out;
+}
+
+.animate-left-show {
+  margin-left: 0;
+}
+
+.animate-opacity {
+  opacity: 0;
+  transition: all 1.5s ease-out;
+}
+
+.animate-opacity-show {
+  opacity: 1;
 }
 
 .project-img-container {
@@ -159,10 +192,19 @@ section {
 }
 
 .section-2 {
-  background: linear-gradient(to bottom, var(--light-pink), 20%, var(--pink));
+  background: var(--main-gradient);
+  background-attachment: fixed;
+  padding-top: 200px;
+  padding-bottom: 300px;
 }
 
 .section-3 {
+  background: var(--main-gradient);
+  background-attachment: fixed;
+  padding-bottom: 300px;
+}
+
+.section-4 {
   background: var(--peach);
   padding-top: 0;
 }
@@ -204,7 +246,9 @@ section {
 }
 
 .blob-top-text {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  letter-spacing: 0.15rem;
+  fill: var(--text-black);
 }
 
 @media only screen and (min-width: 481px) {

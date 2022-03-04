@@ -78,6 +78,44 @@ function createHeaderObserver() {
   return observer;
 }
 
+function animationObservers() {
+  const animatedEls = document.querySelectorAll(".animate");
+
+  let observer;
+  let options = {
+    root: null,
+    threshold: 0.25,
+  };
+  observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const isIntersecting = entry.isIntersecting;
+      const classes = entry.target.classList;
+      const arr = [...classes];
+      const animation = arr.find((className) => {
+        return className.includes("animate-");
+      });
+
+      switch (animation) {
+        case "animate-right":
+          classes.toggle("animate-right-show", isIntersecting);
+          break;
+        case "animate-left":
+          classes.toggle("animate-left-show", isIntersecting);
+          break;
+        case "animate-opacity":
+          classes.toggle("animate-opacity-show", isIntersecting);
+          break;
+        default:
+          return null;
+      }
+    });
+  }, options);
+
+  animatedEls.forEach((el) => {
+    observer.observe(el);
+  });
+}
+
 (() => {
   let headerObserver;
   renderProjects();
@@ -92,4 +130,5 @@ function createHeaderObserver() {
     // prevent observer rerun interference
     headerObserver = createHeaderObserver();
   }, 100);
+  animationObservers();
 })();

@@ -18,6 +18,27 @@
   fill: #355c7d;
 }
 
+.bottom-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.bottom-wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 104px;
+}
+
+.bottom-wave .shape-fill {
+  fill: #f67280;
+}
+
 .wave-2 {
   position: absolute;
   top: 0;
