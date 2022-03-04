@@ -1,0 +1,49 @@
+.top-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.top-wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 137px;
+}
+
+.top-wave .shape-fill {
+  fill: #355c7d;
+}
+
+.wave-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave-2 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 96px;
+}
+
+.wave-2 .shape-fill {
+  fill: #f8b195;
+}
+
+.spacer {
+  aspect-ratio: 960/300;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("./img/spacer.svg");
+}

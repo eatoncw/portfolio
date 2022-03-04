@@ -1,67 +1,244 @@
+:root {
+  --peach: #f8b195;
+  --pink: #f67280;
+  --light-pink: #c06c84;
+  --light-violet: #6c5b78;
+  --blue: #355c7d;
+  --text-black: #0e1111;
+  --text-grey: #353839;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: "Lato", sans-serif;
+  margin: 0;
+  font-family: "Aleo", serif;
+  overflow-x: hidden;
+  /* background: #fff; */
 }
 
-.navbar-light {
-  background: transparent;
+ul {
+  list-style: none;
+  padding: 0;
 }
 
-.footer a {
-  color: inherit;
-  opacity: 0.8;
-}
-
-.footer a:hover {
-  opacity: 1;
-}
-.container .small {
-  font-size: 70%;
-}
-
-.section {
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-
-.section-2 {
-  margin-bottom: 100px;
-}
-
-#intro {
-  background: #1f9e75;
-  padding-top: 100px;
-  padding-bottom: 100px;
+h1 {
+  font-size: 2rem;
 }
 
 h1,
 h5 {
-  color: #f67519;
+  margin: 0;
+  color: var(--text-black);
 }
 
-.display-4 {
-  color: inherit;
+p {
+  margin: 0;
 }
 
-.container a {
-  color: #1f9e75;
+header {
+  position: fixed;
+  background: transparent;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  transition: all 0.5s ease-out;
+}
+.nav-hidden {
+  top: -100px;
+}
+
+header nav {
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.navbar-items {
+  display: none;
+}
+
+header .navbar-items li:not(:last-of-type) {
+  padding-right: 2rem;
+}
+
+.navbar-brand {
+  font-family: "Permanent Marker", cursive;
+  font-size: 2rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar-toggler {
+  display: block;
+  height: 40px;
+  width: 40px;
+}
+
+.head {
+  font-family: "Permanent Marker", cursive;
+}
+
+footer {
+  position: relative;
+  background: var(--light-violet);
+}
+
+footer nav {
+  display: flex;
+  align-items: flex-end;
+  height: 30vh;
+  padding-bottom: 5vh;
+  padding-left: 15px;
+  padding-right: 15px;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.icon-text {
+  display: none;
+  padding-left: 8px;
+}
+
+.footer-section {
+  margin: 0;
+  display: flex;
+  width: 50%;
+}
+
+.footer-section:last-of-type {
+  justify-content: flex-end;
+}
+
+.footer-section li:not(:last-of-type) {
+  margin-right: 25px;
+}
+
+section {
+  position: relative;
+  overflow-y: hidden;
+  padding-top: 200px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  /* min-height: 400px; */
+  width: 100%;
+}
+
+.content-container {
+  padding-left: 2vw;
+  padding-right: 2vw;
+  overflow-y: hidden;
+}
+
+.project-img-container {
+  /* max-width: 100px; */
+  background-color: #fff;
+  padding: 5px;
+  mask: linear-gradient(#000 0 0) top/100% calc(100% - 2 * 5) no-repeat;
+}
+
+.project-img-container img {
+  width: 100%;
+}
+
+.section-1 {
+  background: var(--blue);
+  padding-top: 200px;
+  padding-bottom: 100px;
+}
+
+.section-2 {
+  background: linear-gradient(to bottom, var(--light-pink), 20%, var(--pink));
+}
+
+.section-3 {
+  background: var(--peach);
+  padding-top: 0;
+}
+
+.grid {
+  --auto-grid-min-size: 22rem;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--auto-grid-min-size), 1fr)
+  );
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.grid-item {
+  padding-bottom: 3rem;
 }
 
 .project-thumb-link:hover img {
   opacity: 0.9;
 }
 
-dd p {
-  margin-bottom: 0.5rem;
+.text-muted {
+  color: var(--text-grey);
+  font-size: smaller;
 }
 
-@media only screen and (max-width: 576px) {
-  .footer span {
+.lead {
+  margin-bottom: 1rem;
+  font-size: larger;
+}
+
+.blob-top-container {
+  transform: translate(160px, 2.5vh);
+  position: absolute;
+  width: 300px;
+  bottom: 0;
+}
+
+.blob-top-text {
+  font-size: 2rem;
+}
+
+@media only screen and (min-width: 481px) {
+  .section-1 {
+    padding-bottom: 200px;
+  }
+  .blob-top-container {
+    display: block;
+    transform: translate(50%, 3vh);
+    width: 500px;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .blob-top-container {
+    display: block;
+    transform: translate(85%, 3vh);
+    /* width: 100%; */
+  }
+  .navbar-toggler {
     display: none;
   }
-  #intro {
-    text-align: center;
+  .navbar-items {
+    display: flex;
   }
-  .display-4 {
-    font-size: 2.5rem;
+}
+
+@media only screen and (min-width: 999px) {
+  .blob-top-container {
+    display: block;
+    transform: translate(150%, 3vh);
+    /* width: 100%; */
+  }
+  .icon-text {
+    display: inline-block;
   }
 }

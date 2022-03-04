@@ -2,182 +2,109 @@
 <html lang="en">
 
 <head>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aleo&family=Permanent+Marker&display=swap" rel="stylesheet">
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+
 
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="shapes.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/kute.js@2.2.2/dist/kute.min.js"></script>
+  <script type="module" defer src="./index.js"></script>
 
   <title>christopher eaton portfolio</title>
 </head>
 
-<body id="top">
-  <nav class="navbar navbar-light navbar-expand-lg">
-    <a class="navbar-brand" href="#top">Christopher Eaton</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-dropdown">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbar-dropdown">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#projects">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about">About</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="contact-details" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Contact
-          </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="contact-details">
-            <a class="dropdown-item" href="mailto:eaton.cw@gmail.com"><i class="far fa-envelope"></i><span
-                class="pl-2">eaton.cw@gmail.com</span></a>
-            <a class="dropdown-item" href="tel:+447305132501"><i class="fas fa-phone"></i><span class="pl-2">+44 7305
-                132 501<span></a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <div id="intro" style="color:#ebf0f6;">
-    <div class="container">
-      <h1 class="display-4 pb-3">Hi, I'm a full-stack JavaScript developer living in London, UK</h1>
-      <p class="pt-3 mt-3 lead">I like building web apps with React and mobile apps with React Native.</p>
-      <p class="lead">I'm experienced with Google Cloud Platform and Heroku, and love using TypeScript.</p>
-    </div>
-  </div>
-  <div class="container">
-    <div id="projects" class="section">
-      <h1 class="font-weight-light pt-3">Recent projects</h1>
-      <p class="lead">Below are some of my more recent front-end focused projects.</p>
-      <div class="row">
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4 py-3">
-          <p class="lead m-0">Banking app</br><a href="https://join.solerabank.com" target="_blank" class="small">Solera
-              National Bank Application App</a></p>
-          <a href="https://join.solerabank.com" target="_blank" class="project-thumb-link">
-            <div class="row no-gutters py-1 mb-2">
-              <div class="col-12">
-                <img src="img/solera-bank.jpg" class="img-fluid" />
-              </div>
+<body>
+  <header id="header">
+    <nav class="navbar">
+      <a class="navbar-brand" href="#top">Christopher Eaton</a>
 
-            </div>
-          </a>
-          <p>I lead on the front-end and back-end of this new retirement account banking app.</p>
-          <p class="text-muted">React.js (client-side rendered), Node.js, Express, many GCP services</p>
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4 py-3">
-          <p class="lead m-0">Next.js e-commerce site</br><a href="https://bamboosushi.com/" target="_blank"
-              class="small">Bamboo
-              Sushi</a></p>
-          <a href="https://bamboosushi.com/" target="_blank" class="project-thumb-link">
-            <div class="row no-gutters py-1 mb-2">
-              <div class="col-12">
-                <img src="img/bamboo-sushi.jpg" class="img-fluid" />
-              </div>
-
-            </div>
-          </a>
-          <p>Built a custom cart and checkout react component utilizing Shopify's GraphQL API.</p>
-          <p class="text-muted">Next.js, Shopify, GraphQL</p>
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4 py-3">
-          <p class="lead m-0">JAM stack website</br><a href="https://www.vinoshipper.com" target="_blank"
-              class="small">Vinoshipper</a></p>
-          <a href="https://www.vinoshipper.com/" target="_blank" class="project-thumb-link">
-            <div class="row no-gutters py-1 mb-2">
-              <div class="col-12">
-                <img src="img/vinoshipper.jpg" class="img-fluid" />
-              </div>
-
-            </div>
-          </a>
-          <p>Lead developer on custom JAM stack website.</p>
-          <p class="text-muted">React.js, Gatsby (with GraphQL), Styled-components</p>
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4 py-3">
-          <p class="lead m-0">Shopify e-commerce</br><a href="https://territorialseed.com/" target="_blank"
-              class="small">Territorial Seed</a></p>
-          <a href="https://territorialseed.com/" target="_blank" class="project-thumb-link">
-            <div class="row no-gutters py-1 mb-2">
-              <div class="col-12">
-                <img src="img/territorial-seed.jpg" class="img-fluid" />
-              </div>
-
-            </div>
-          </a>
-          <p>I joined the project after launch and developed new custom features, mainly in JavaScript.
-          </p>
-          <p class="text-muted">JavaScript</p>
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4 py-3">
-          <p class="lead m-0">JAM stack website</br><a href="https://bayequityhomeloans.com/" target="_blank"
-              class="small">Bay Equity Home Loans</a></p>
-          <a href="https://bayequityhomeloans.com/" target="_blank" class="project-thumb-link">
-            <div class="row no-gutters py-1 mb-2">
-              <div class="col-12">
-                <img src="img/bay-equity.jpg" class="img-fluid" />
-              </div>
-            </div>
-          </a>
-          <p>Helped build custom features for this JAM stack site.</p>
-          <p class="text-muted">Gatsby, D3.js, Firebase</p>
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4 py-3">
-          <p class="lead m-0">Casino and resort</br><a href="https://www.palms.com" target="_blank" class="small">Palms
-              Casino and Resort</a></p>
-          <a href="https://www.palms.com" target="_blank" class="project-thumb-link">
-            <div class="row no-gutters py-1 mb-2">
-              <div class="col-6">
-                <img src="img/palms-1.jpg" class="img-fluid" />
-              </div>
-              <div class="col-6">
-                <img src="img/palms-2.jpg" class="img-fluid" />
-              </div>
-            </div>
-          </a>
-          <p>Worked on the front-end of the booking for this new website, focusing on the booking engine.</p>
-          <p class="text-muted">React.js, Redux, APIs</p>
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4 py-3">
-          <p class="lead m-0">E-commerce product aggregator</br><a href="https://eatoncw.github.io/designtbl_furniture/"
-              target="_blank" class="small">DesignTbl</a></p>
-          <a href="https://eatoncw.github.io/designtbl_furniture/" target="_blank" class="project-thumb-link">
-            <div class="row no-gutters py-1 mb-2">
-              <div class="col-6">
-                <img src="img/projects1_shot1.jpg" class="img-fluid" />
-              </div>
-              <div class="col-6">
-                <img src="img/projects1_shot2.jpg" class="img-fluid" />
-              </div>
-            </div>
-          </a>
-          <p>Built using React.js and RoR, DesignTbl helped users find great prices on home
-            furniture products.</p>
-          <p>The back-end accesses retailer APIs + web scraping to aggregate on-sale products.</p>
-          <p class="text-muted">React, Redux, Rails 5 API-only, APIs, Redis, Heroku</p>
-        </div>
+      <div class="navbar-collapse" id="navbar-dropdown">
+        <ul class="navbar-items">
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+        <button class="navbar-toggler" type="button">
+          <i class="fa fa-bars"></i>
+        </button>
       </div>
-    </div>
-    <div id="about" class="section-2">
-      <h1 class="font-weight-light py-3">About</h1>
-      <div class="row pb-3">
-        <div class="col-12">
-          <p>I have co-founded a few startups as CTO, including an on-demand babysitting mobile app.</p>
-          <p>I enjoy the challenges of start-ups and am experienced with wearing many hats throughout a day - from UI
-            design to pitching to business models.
-            Several years ago I left the construction industry, where I ran my own consultancy for sustainable
-            building design, and started coding.
-          </p>
-          <p>I love working with people to find awesome solutions.</p>
+    </nav>
+  </header>
+  <main>
+    <section id="intro" class="section-1" style="overflow-x: hidden;">
+      <div class="content-container">
+        <h1 class="head">Hi, I'm a full-stack JavaScript developer living in London, UK</h1>
+        <p>I like building web apps with React and mobile apps with React Native.</p>
+        <p>I'm experienced with Google Cloud Platform and Heroku, and love using TypeScript.</p>
+      </div>
+      <div class="blob-top-container">
+        <svg id="visual" viewBox="0 0 960 300" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" preserveAspectRatio="xMinYMin meet" x="0" y="0">
+          <g transform="translate(480.07498084644175 135.0008608618632)">
+            <path class="blob1"
+              d="M58.1 -52.6C76.1 -40.1 92 -20 99.7 7.7C107.4 35.4 106.7 70.7 88.7 91.5C70.7 112.4 35.4 118.7 0.1 118.6C-35.1 118.5 -70.2 111.9 -87.6 91.1C-104.9 70.2 -104.5 35.1 -104.5 0C-104.5 -35.1 -104.9 -70.2 -87.6 -82.7C-70.2 -95.2 -35.1 -85.1 -7.5 -77.6C20 -70 40.1 -65.1 58.1 -52.6"
+              fill="#f8b195"></path>
+            <text class="blob-top-text" dominant-baseline="middle" text-anchor="middle">.js</text>
+          </g>
+          <g transform="translate(474.55799047433834 154.2411799517041)" style="visibility: hidden;">
+            <path class="blob2"
+              d="M73.1 -69.7C98.1 -48.1 124 -24 120.9 -3.2C117.7 17.7 85.4 35.4 60.4 54.9C35.4 74.4 17.7 95.7 -7.7 103.3C-33 111 -66 105 -85.5 85.5C-105 66 -111 33 -110.2 0.8C-109.3 -31.3 -101.7 -62.7 -82.2 -84.4C-62.7 -106 -31.3 -118 -3.7 -114.4C24 -110.7 48.1 -91.4 73.1 -69.7"
+              fill="#f8b195"></path>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <section id="projects" class="section-2">
+      <div class="content-container">
+        <h1>Recent projects</h1>
+        <div style="padding-bottom: 4rem;">
+          <p class="lead">Below are some of my more recent front-end focused projects.</p>
+        </div>
+        <div class="grid projects-container">
+          <noscript>You need to support js to view my work!</noscript>
+        </div>
+
+      </div>
+      </div>
+      </div>
+      <div class="top-wave">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"></path>
+        </svg>
+      </div>
+    </section>
+    <div class="spacer"></div>
+    <section id="about" class="section-3">
+      <div class="content-container">
+        <h1 class="font-weight-light py-3">About</h1>
+        <div>
+          <div class="col-12">
+            <p>I have co-founded a few startups as CTO, including an on-demand babysitting mobile app.</p>
+            <p>I enjoy the challenges of start-ups and am experienced with wearing many hats throughout a day - from UI
+              design to pitching to business models.
+              Several years ago I left the construction industry, where I ran my own consultancy for sustainable
+              building design, and started coding.
+            </p>
+            <p>I love working with people to find awesome solutions.</p>
+          </div>
         </div>
       </div>
       <h5>Skills</h5>
+
       <dl class="row">
         <dt class="col-sm-2">Front-end</dt>
         <dd class="col-sm-4">
@@ -207,49 +134,50 @@
           <p>Rust</p>
         </dd>
       </dl>
+
+    </section>
+
+  </main>
+  <footer>
+    <nav>
+      <ul class="footer-section">
+        <li>
+          <a class="nav-link" href="mailto:eaton.cw@gmail.com"><i class="far fa-envelope"></i><span
+              class="icon-text">eaton.cw@gmail.com</span></a>
+        </li>
+        <li>
+          <a class="nav-link" href="tel:+447305132501"><i class="fas fa-phone"></i><span class="icon-text">+44 7305 132
+              501<span></a>
+        </li>
+      </ul>
+      <ul class="footer-section">
+        <li>
+          <a class="nav-link" href="https://gist.github.com/eatoncw"><i class="fas fa-code"></i></a>
+        </li>
+        <li>
+          <a class="nav-link" href="https://github.com/eatoncw"><i class="fab fa-github"></i></a>
+        </li>
+        <li>
+          <a class="nav-link" href="https://stackoverflow.com/users/6780313/eaton9000"><i
+              class="fab fa-stack-overflow"></i></a>
+        </li>
+        <li>
+          <a class="nav-link" href="https://www.linkedin.com/in/christopherweaton/"><i
+              class="fab fa-linkedin-in"></i></a>
+        </li>
+      </ul>
+    </nav>
+    <div class="wave-2">
+      <svg style="stroke: rgb(255,255,255);
+    stroke-width: 0;" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+        preserveAspectRatio="none">
+        <path
+          d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+          class="shape-fill"></path>
+      </svg>
     </div>
-  </div>
-  <nav class="footer p-2" style="background:#212121; color:#fff;font-weight:100;">
-    <ul class="m-0 p-0" style="display:inline-flex;list-style:none;">
-      <li>
-        <a class="nav-link" href="mailto:eaton.cw@gmail.com"><i class="far fa-envelope"></i><span
-            class="pl-2">eaton.cw@gmail.com</span></a>
-      </li>
-      <li>
-        <a class="nav-link" href="tel:+447305132501"><i class="fas fa-phone"></i><span class="pl-2">+44 7305 132
-            501<span></a>
-      </li>
-    </ul>
-    <ul class="m-0 p-0" style="float:right;list-style:none;display:inline-flex;">
-      <li>
-        <a class="nav-link" data-toggle="tooltip" data-placement="left" title="code samples"
-          href="https://gist.github.com/eatoncw"><i class="fas fa-code"></i></a>
-      </li>
-      <li>
-        <a class="nav-link" href="https://github.com/eatoncw"><i class="fab fa-github"></i></a>
-      </li>
-      <li>
-        <a class="nav-link" href="https://stackoverflow.com/users/6780313/eaton9000"><i
-            class="fab fa-stack-overflow"></i></a>
-      </li>
-      <li>
-        <a class="nav-link" href="https://www.linkedin.com/in/christopherweaton/"><i class="fab fa-linkedin-in"></i></a>
-      </li>
-    </ul>
-  </nav>
+  </footer>
 </body>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-<script>
-  $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-  });
-</script>
 
 </html>
