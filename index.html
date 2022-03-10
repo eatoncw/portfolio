@@ -15,7 +15,8 @@
   <script defer src="https://cdn.jsdelivr.net/npm/kute.js@2.2.2/dist/kute.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
   <script type="module" defer src="./index.js"></script>
-
+  <script defer src="https://d3js.org/d3.v7.min.js"></script>
+  <script type="module" defer src="./charts.js"></script>
   <title>christopher eaton portfolio</title>
 </head>
 
@@ -51,8 +52,32 @@
         </button>
       </div>
       <div class="vertical-nav-menu">
-        hello world
-        <div><button class="menu-close">X</button></div>
+
+        <ul class="navbar-items-vertical">
+          <li class="nav-item">
+            <a class="nav-link nav-link-vertical" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-vertical" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-vertical" href="#contact">Contact</a>
+          </li>
+        </ul>
+        <button class="menu-close" type="button">
+          <div class="menu back navbar-icon">
+            <label>
+              <input type="checkbox">
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="30" />
+                <path class="line--1" d="M0 55l14-10c4.7-3.3 9-5 13-5h72" />
+                <path class="line--2" d="M0 50h99" />
+                <path class="line--3" d="M0 45l14 10c4.7 3.3 9 5 13 5h72" />
+              </svg>
+            </label>
+          </div>
+        </button>
+
 
       </div>
     </nav>
@@ -60,8 +85,8 @@
   <main>
     <section id="intro" class="section-1" style="overflow-x: hidden;">
       <div class="content-container">
-        <h1 class="head">Hi, I'm a full-stack JavaScript developer living in London, UK</h1>
-        <p class="subhead">I like building web apps with React and mobile apps with React Native.</p>
+        <h1 class="head">Hi, I'm a full-stack developer (front-end bias) living in London, UK</h1>
+        <p class="subhead">I like building web apps with JavaScript libraries like React.</p>
         <p class="subhead">I'm experienced with Google Cloud Platform and Heroku, and love using TypeScript.</p>
       </div>
       <div class="blob-top-container">
@@ -140,6 +165,22 @@
         <h1 class="section-header animate animate-left">Skills</h1>
         <div class="skills-container animate animate-opacity">
           <noscript>You need to support js to view my skills!</noscript>
+        </div>
+    </section>
+    <section id="skills" class="section-4">
+      <div class="content-container">
+        <h1 class="section-header animate animate-left">Some data visualizations</h1>
+        <div class="charts-container">
+          <noscript>You need to support js to view my skills!</noscript>
+          <div>
+            <div class="chart-1 animate animate-opacity"></div>
+            <div>
+              <svg id="chart1-legend"></svg>
+            </div>
+          </div>
+          <div>
+            <div class="chart-2 animate animate-opacity"></div>
+          </div>
         </div>
     </section>
   </main>

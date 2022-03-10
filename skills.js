@@ -22,6 +22,7 @@ export default {
     "Redis",
     "Ruby",
     "Rails",
-    "Rust",
+    "Python",
+    "Rust (basic)",
   ],
 };

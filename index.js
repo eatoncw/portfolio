@@ -4,7 +4,6 @@ import projects from "./projects.js";
 import skills from "./skills.js";
 
 function renderSkills() {
-  const headers = Object.keys(skills);
   const skillsTemplate = (header) => html`<div class="skill-container">
     <p class="skill-head">${header}</p>
     ${skills[header].map((skill, index) => {
@@ -70,7 +69,6 @@ function handleBlobs() {
     const div = document.querySelector(blob);
     const svg1 = div.querySelector(".blob1").className.baseVal;
     const svg2 = div.querySelector(".blob2").className.baseVal;
-    console.log("names", svg1, svg2);
     const tween = KUTE.fromTo(
       `.${svg1}`,
       { path: `.${svg1}` },
@@ -149,6 +147,7 @@ function animationObservers() {
 }
 
 function handleHeaderMenu() {
+  const TIMEOUT_BACKGROUND = 600;
   let navMenuOpen = false;
   let autoShow;
   const checkbox = document.querySelector(".navbar-toggler input");
@@ -162,27 +161,53 @@ function handleHeaderMenu() {
 
   setAutoAnimateNav();
 
-  function openMobileNav() {
+  function toggleMobileNav(cb) {
     navMenuOpen = !navMenuOpen;
     navMenu.classList.toggle("nav-menu-show", navMenuOpen);
     setTimeout(() => {
       document.querySelector("body").style.position = navMenuOpen
         ? "fixed"
         : "relative";
-    }, 600);
+    }, TIMEOUT_BACKGROUND);
+    cb && cb();
   }
+
+  function closeMobileNav(cb) {
+    if (checkbox.checked) checkbox.checked = false;
+    setTimeout(setAutoAnimateNav, 2000);
+    toggleMobileNav(cb);
+  }
+
+  function navigateOnClick(e) {
+    const href = e.target.href;
+    if (!href) return;
+    const section = document.getElementById(href.split("#")[1]);
+    if (document.querySelector("body").style.position === "fixed") {
+      document.querySelector("body").style.position === "fixed";
+    }
+
+    function callback() {
+      setTimeout(() => {
+        section.scrollIntoView();
+      }, TIMEOUT_BACKGROUND + 5);
+    }
+
+    closeMobileNav(callback);
+  }
+
+  document
+    .querySelector(".navbar-items-vertical")
+    .addEventListener("click", navigateOnClick);
 
   document.querySelector(".navbar-toggler").addEventListener("click", (e) => {
     if (e.target.tagName === "LABEL") return;
     clearInterval(autoShow);
-    openMobileNav();
+    toggleMobileNav();
   });
 
   document.querySelector(".menu-close").addEventListener("click", (e) => {
     if (e.target.tagName === "LABEL") return;
-    if (checkbox.checked) checkbox.checked = false;
-    setTimeout(setAutoAnimateNav, 2000);
-    openMobileNav();
+    closeMobileNav();
   });
 }
 
