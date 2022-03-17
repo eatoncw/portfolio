@@ -68,6 +68,7 @@ function renderProjects() {
 }
 
 function handleBlobs() {
+  // if isn't loaded kill
   if (KUTE in window === undefined) return;
   const blobContainerClasses = [".blob-top-container"];
 
