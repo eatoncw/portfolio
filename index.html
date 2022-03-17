@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Aleo&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&family=Raleway:wght@800&display=swap"
+    rel="stylesheet">
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
 
@@ -14,8 +15,8 @@
   <link rel="stylesheet" href="shapes.css">
   <script defer src="https://cdn.jsdelivr.net/npm/kute.js@2.2.2/dist/kute.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
-  <script type="module" defer src="./index.js"></script>
   <script defer src="https://d3js.org/d3.v7.min.js"></script>
+  <script type="module" defer src="./index.js"></script>
   <script type="module" defer src="./charts.js"></script>
   <title>christopher eaton portfolio</title>
 </head>
@@ -64,19 +65,7 @@
             <a class="nav-link nav-link-vertical" href="#contact">Contact</a>
           </li>
         </ul>
-        <button class="menu-close" type="button">
-          <div class="menu back navbar-icon">
-            <label>
-              <input type="checkbox">
-              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="30" />
-                <path class="line--1" d="M0 55l14-10c4.7-3.3 9-5 13-5h72" />
-                <path class="line--2" d="M0 50h99" />
-                <path class="line--3" d="M0 45l14 10c4.7 3.3 9 5 13 5h72" />
-              </svg>
-            </label>
-          </div>
-        </button>
+        <button class="menu-close" type="button">&times;</button>
 
 
       </div>
@@ -85,9 +74,13 @@
   <main>
     <section id="intro" class="section-1" style="overflow-x: hidden;">
       <div class="content-container">
-        <h1 class="head">Hi, I'm a full-stack developer (front-end bias) living in London, UK</h1>
-        <p class="subhead">I like building web apps with JavaScript libraries like React.</p>
-        <p class="subhead">I'm experienced with Google Cloud Platform and Heroku, and love using TypeScript.</p>
+        <div class="intro-content">
+          <h1 class="head">Hi, I'm Chris - a full-stack developer<br>(front-end bias)</h1>
+          <p class="subhead">I build web apps with JavaScript libraries, like React, am experienced with Google Cloud
+            Platform and Heroku, and love
+            using TypeScript.
+          </p>
+        </div>
       </div>
       <div class="blob-top-container">
         <svg id="visual" viewBox="0 0 960 300" xmlns="http://www.w3.org/2000/svg"
@@ -109,18 +102,30 @@
     <section id="about" class="section-2">
       <div class="content-container">
         <h1 class="section-header animate animate-left">About</h1>
-
         <div class="animate animate-opacity">
-          <p class="lead">I have co-founded a few startups as CTO, including an on-demand babysitting mobile app.</p>
-          <p class="lead">I enjoy the challenges of start-ups and am experienced with wearing many hats throughout a
-            day - from UI
-            design to pitching to business models.
-            Several years ago I left the construction industry, where I ran my own consultancy for sustainable
-            building design, and started coding.
-          </p>
-          <p class="lead">I love working with people to find awesome solutions.</p>
-        </div>
+          <div class="about-copy">
+            <p class="lead">I'm a freelance developer, mainly working for ad agencies. I enjoy collaborating and am as
+              comfortable as a lead
+              developer in a greenfield project as I am working as a dev in legacy code. I'm a natural communicator, at
+              ease with
+              presenting my ideas
+              and thinking, and understand the role of developing within a broader context of strategy, design and
+              client delivery.
+            </p>
+            <p class="lead">I'm from the US and now live with my family in London. Some years ago, I left the
+              construction industry, where I ran my
+              own sustainable building design consultancy, and started coding. I've co-founded two startups as CTO. I
+              love what I do
+              and am continuously updating my skills.
+            </p>
+          </div>
 
+          <div class="skills-container animate animate-opacity">
+            <noscript>You need to support js to view my skills!</noscript>
+          </div>
+
+
+        </div>
       </div>
       <div class="top-wave">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -133,9 +138,9 @@
 
     <section id="projects" class="section-3">
       <div class="content-container">
-        <h1 class="section-header animate animate-left">Recent projects</h1>
+        <h1 class="section-header animate animate-left">My work</h1>
         <div style="padding-bottom: 4rem;" class="animate animate-opacity">
-          <p class="lead">Below are some of my more recent front-end focused projects.</p>
+          <p class="lead">Some favourite front-end focused projects.</p>
         </div>
         <div class="grid projects-container">
           <noscript>You need to support js to view my work!</noscript>
@@ -160,67 +165,75 @@
 
     <div class="spacer"></div>
 
-    <section id="skills" class="section-4">
-      <div class="content-container">
-        <h1 class="section-header animate animate-left">Skills</h1>
-        <div class="skills-container animate animate-opacity">
-          <noscript>You need to support js to view my skills!</noscript>
-        </div>
-    </section>
-    <section id="skills" class="section-4">
+
+    <section id="skills" class="section-5">
       <div class="content-container">
         <h1 class="section-header animate animate-left">Some data visualizations</h1>
+        <p class="lead">I used to work in sustainability, so here I've combined these interests with my front-end data
+          viz skills.</p>
+        <p class="lead">We fetch data from a grid-elec related API, and display the data dynamically.</p>
+
         <div class="charts-container">
           <noscript>You need to support js to view my skills!</noscript>
           <div>
-            <div class="chart-1 animate animate-opacity"></div>
+            <div class="chart-1 animate animate-chart"></div>
             <div>
               <svg id="chart1-legend"></svg>
             </div>
           </div>
           <div>
-            <div class="chart-2 animate animate-opacity"></div>
+            <div class="chart-2 animate animate-chart"></div>
           </div>
+          <!-- <div>
+            <div class="chart-3 animate animate-opacity"></div>
+          </div> -->
         </div>
     </section>
   </main>
-  <footer>
-    <nav>
-      <ul class="footer-section">
-        <li>
-          <a class="nav-link" href="mailto:eaton.cw@gmail.com"><i class="far fa-envelope"></i><span
-              class="icon-text">eaton.cw@gmail.com</span></a>
-        </li>
-        <li>
-          <a class="nav-link" href="tel:+447305132501"><i class="fas fa-phone"></i><span class="icon-text">+44 7305 132
-              501<span></a>
-        </li>
-      </ul>
-      <ul class="footer-section">
-        <li>
-          <a class="nav-link" href="https://gist.github.com/eatoncw"><i class="fas fa-code"></i></a>
-        </li>
-        <li>
-          <a class="nav-link" href="https://github.com/eatoncw"><i class="fab fa-github"></i></a>
-        </li>
-        <li>
-          <a class="nav-link" href="https://stackoverflow.com/users/6780313/eaton9000"><i
-              class="fab fa-stack-overflow"></i></a>
-        </li>
-        <li>
-          <a class="nav-link" href="https://www.linkedin.com/in/christopherweaton/"><i
-              class="fab fa-linkedin-in"></i></a>
-        </li>
-      </ul>
-    </nav>
-    <div class="wave-2">
-      <svg style="stroke: rgb(255,255,255);
+  <footer id="contact">
+    <div class="nav-container">
+      <div>
+        <h2>Contact</h2>
+      </div>
+      <nav>
+
+        <ul class="footer-section">
+          <li>
+            <a class="nav-link" href="mailto:eaton.cw@gmail.com"><i class="far fa-envelope"></i><span
+                class="icon-text">eaton.cw@gmail.com</span></a>
+          </li>
+          <li>
+            <a class="nav-link" href="tel:+447305132501"><i class="fas fa-phone"></i><span class="icon-text">+44 7305
+                132
+                501<span></a>
+          </li>
+        </ul>
+        <ul class="footer-section">
+          <li>
+            <a class="nav-link" href="https://gist.github.com/eatoncw"><i class="fas fa-code"></i></a>
+          </li>
+          <li>
+            <a class="nav-link" href="https://github.com/eatoncw"><i class="fab fa-github"></i></a>
+          </li>
+          <li>
+            <a class="nav-link" href="https://stackoverflow.com/users/6780313/eaton9000"><i
+                class="fab fa-stack-overflow"></i></a>
+          </li>
+          <li>
+            <a class="nav-link" href="https://www.linkedin.com/in/christopherweaton/"><i
+                class="fab fa-linkedin-in"></i></a>
+          </li>
+        </ul>
+      </nav>
+      <div class="wave-2">
+        <svg style="stroke: rgb(255,255,255);
     stroke-width: 0;" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-        preserveAspectRatio="none">
-        <path
-          d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-          class="shape-fill"></path>
-      </svg>
+          preserveAspectRatio="none">
+          <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            class="shape-fill"></path>
+        </svg>
+      </div>
     </div>
   </footer>
 </body>

@@ -47,6 +47,7 @@
   overflow: hidden;
   line-height: 0;
   transform: rotate(180deg);
+  margin-top: var(--wave-line-hider);
 }
 
 .wave-2 svg {

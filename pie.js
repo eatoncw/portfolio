@@ -67,7 +67,10 @@ export async function drawPie(svg, data, width, height) {
     .data(
       [
         ...data,
-        { name: "Sum Domestic Non-Fossil Fuels", value: nonFossilFuelPercent },
+        {
+          name: "Sum Domestic Non-Fossil Fuels",
+          value: parseInt(nonFossilFuelPercent),
+        },
       ],
       (d) => d
     );
@@ -185,7 +188,7 @@ export function createContainer(width, height) {
     .append("g")
     .classed("labels", true)
     .attr("transform", `translate(${-width / 4 + 50}, 0)`)
-    .attr("font-family", "Permanent Marker")
+    .attr("font-family", "Aleo")
     .attr("font-size", 14)
     .attr("text-anchor", "middle");
 

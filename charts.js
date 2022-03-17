@@ -1,9 +1,9 @@
-let carbonIntensity;
-
 import barChart from "./bar.js";
 import renderLegend from "./legend.js";
 import { createContainer, drawPie } from "./pie.js";
 
+let barData;
+let legendData;
 const colors = [
   "#6b486b",
   "#a05d56",
@@ -16,6 +16,7 @@ const colors = [
   "#d5e1df",
   "#405d27",
 ];
+
 /**
  * returns static carbon intensity factors
  * api.carbonintensity.org.uk/intensity/factors
@@ -28,8 +29,8 @@ async function getCarbonIntensity() {
     );
     if (!res.ok) throw Error("response error", res);
     const { data } = await res.json();
-    console.log("got carbon data");
-    carbonIntensity = data[0];
+
+    const carbonIntensity = data[0];
 
     const adjustedData = Object.keys(carbonIntensity)
       .map((key) => {
@@ -45,8 +46,17 @@ async function getCarbonIntensity() {
       ...adjustedData.map((item) => item.source),
       "Zero Carbon Intensity Factors of Solar, Wind, Hydro, Nuclear not shown",
     ];
-    renderBar(adjustedData, legendKeys);
+    barData = adjustedData;
+    legendData = legendKeys;
   } catch (e) {}
+}
+
+let barShowing;
+export function animateBarOnIntersect(isIntersecting) {
+  if (isIntersecting && !barShowing) {
+    renderBar(barData, legendData);
+  }
+  barShowing = isIntersecting;
 }
 
 export async function getLondonGridData() {
@@ -74,7 +84,7 @@ export async function getLondonGridData() {
 async function initLondonGridChart() {
   const width = window.innerWidth;
   const height = 650;
-  const svg = createContainer(width, height);
+  const svg = d3 && createContainer(width, height);
   const data = await getLondonGridData();
   drawPie(svg, data, width, height);
 
@@ -92,5 +102,12 @@ async function renderBar(data, legendKeys) {
   await renderLegend(legendKeys, "#chart1-legend", colors);
 }
 
+export function animateChartIntersect(className) {
+  if (className === "chart-1") {
+    animateBarOnIntersect(true);
+  } else if (className === "chart-2") {
+    initLondonGridChart();
+  }
+}
+
 getCarbonIntensity();
-initLondonGridChart();

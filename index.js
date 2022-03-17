@@ -2,17 +2,20 @@ import { html, render } from "https://unpkg.com/lit-html@0.7.1/lit-html.js";
 
 import projects from "./projects.js";
 import skills from "./skills.js";
+import { animateChartIntersect } from "./charts.js";
 
 function renderSkills() {
   const skillsTemplate = (header) => html`<div class="skill-container">
     <p class="skill-head">${header}</p>
-    ${skills[header].map((skill, index) => {
-      return html`<div class="skill-item">
-        <div class="skill-item-wrapper">
-          <p>${skill}</p>
-        </div>
-      </div>`;
-    })}
+    <div class="skill-items">
+      ${skills[header].map((skill, index) => {
+        return html`<div class="skill-item">
+          <div class="skill-item-wrapper">
+            <p>${skill}</p>
+          </div>
+        </div>`;
+      })}
+    </div>
   </div>`;
   const section = html`${Object.keys(skills).map((header) => {
     return skillsTemplate(header);
@@ -26,21 +29,23 @@ function renderProjects() {
       ? `animate animate-opacity grid-item grid-item-double`
       : "animate animate-opacity grid-item grid-item-single"}
   >
-    <p class="project-head">${project.title}</p>
-    <div class="project-subhead-wrapper">
-      <a class="project-subhead" href="${project.titleLinkHref}" target="_blank"
-        >${project.titleLinkName}</a
-      >
-    </div>
     <div class="project-content">
       <a href="${project.imgHref}" target="_blank" class="project-thumb-link">
         <div>
           <div class="project-img-container">
-            <img src="img/${project.img}" />
-            ${project.img2 && html`<img src="img/${project.img}" />`}
+            <img src="img/${project.img}" alt="${project.title}" />
           </div>
         </div>
       </a>
+      <p class="project-head">${project.title}</p>
+      <div class="project-subhead-wrapper">
+        <a
+          class="project-subhead"
+          href="${project.titleLinkHref}"
+          target="_blank"
+          >${project.titleLinkName}</a
+        >
+      </div>
       <div class="project-description">
         <p>${project.body}</p>
         <p class="text-muted">
@@ -62,7 +67,6 @@ function renderProjects() {
 
 function handleBlobs() {
   if (KUTE in window === undefined) return;
-  console.log(KUTE in window);
   const blobContainerClasses = [".blob-top-container"];
 
   blobContainerClasses.forEach((blob) => {
@@ -110,7 +114,7 @@ function createHeaderObserver() {
 
 function animationObservers() {
   const animatedEls = document.querySelectorAll(".animate");
-
+  let chartsShowing = [];
   let observer;
   let options = {
     root: null,
@@ -134,6 +138,17 @@ function animationObservers() {
           break;
         case "animate-opacity":
           classes.toggle("animate-opacity-show", isIntersecting);
+          break;
+        case "animate-chart":
+          const chart = arr.find((className) => {
+            return className.includes("chart-");
+          });
+          if (!chart) return;
+          if (!chartsShowing.includes(chart) && isIntersecting) {
+            animateChartIntersect(chart);
+            chartsShowing.push(chart); // add to the array so not duplicated
+          }
+
           break;
         default:
           return null;
