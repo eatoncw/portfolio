@@ -5,7 +5,7 @@ export default [
     titleLinkHref: "https://join.solerabank.com",
     img: "solera-bank.jpg",
     imgHref: "https://join.solerabank.com",
-    body: "I lead on the front-end and back-end of this new retirement account banking app.",
+    body: "I led on the front-end and back-end of this new retirement account banking app.",
     technologies: [
       "React.js (client-side rendered)",
       "Node.js",
@@ -19,7 +19,7 @@ export default [
     titleLinkHref: "https://bamboosushi.com/",
     img: "bamboo-sushi.jpg",
     imgHref: "https://bamboosushi.com/",
-    body: "Built a custom cart and checkout react component utilizing Shopify's GraphQL API.",
+    body: "Built a custom cart and checkout React component utilizing Shopify's GraphQL API.",
     technologies: ["Next.js", "Shopify", "GraphQL"],
   },
   {

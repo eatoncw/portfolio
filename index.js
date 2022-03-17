@@ -37,14 +37,16 @@ function renderProjects() {
           </div>
         </div>
       </a>
-      <p class="project-head">${project.title}</p>
-      <div class="project-subhead-wrapper">
+      <div class="project-head-container">
         <a
           class="project-subhead"
           href="${project.titleLinkHref}"
           target="_blank"
           >${project.titleLinkName}</a
         >
+
+        <span class="dash-space">-</span>
+        <span class="project-head">${project.title}</span>
       </div>
       <div class="project-description">
         <p>${project.body}</p>
