@@ -18,6 +18,8 @@
   <script defer src="https://d3js.org/d3.v7.min.js"></script>
   <script type="module" defer src="./index.js"></script>
   <script type="module" defer src="./charts.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script defer src="./icons.js"></script>
   <title>christopher eaton portfolio</title>
 </head>
 
@@ -139,11 +141,16 @@
     </section>
 
     <section id="projects" class="section-3">
+      <div class="work-icons-container">
+        <i data-feather="grid" class="grid-icon"></i>
+        <i data-feather="layers" class="layers-icon"></i>
+      </div>
       <div class="content-container">
         <h1 class="section-header animate animate-left">My work</h1>
         <div style="padding-bottom: 4rem;" class="animate animate-opacity">
           <p class="lead">Some favourite front-end focused projects.</p>
         </div>
+
         <div class="grid projects-container">
           <noscript>You need to support js to view my work!</noscript>
         </div>
@@ -239,6 +246,5 @@
     </div>
   </footer>
 </body>
-
 
 </html>
