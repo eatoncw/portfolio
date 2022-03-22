@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="christopher eaton's portfolio site 404">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <title>christopher eaton portfolio 404</title>
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    #zork {
+      position: fixed;
+    }
+
+    #see-grue {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      box-shadow: 0 0 125px 125px #111 inset;
+      background-image: url("./img/grue.png");
+      background-repeat: no-repeat;
+      height: 500px;
+      width: 500px;
+      background-position: center;
+      background-size: cover;
+      z-index: -1;
+    }
+
+    .hide-grue {
+      opacity: 0;
+    }
+
+    .flash-grue {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="zork"></div>
+  <div id="see-grue" class="hide-grue">
+  </div>
+</body>
+<script>
+
+  function randomNum(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  const zork = document.getElementById("zork");
+  const seeGrue = document.getElementById("see-grue")
+  const gruesArr = [
+    "<p>It is pitch black.</p><p>You are likely to be eaten by a grue.</p>",
+    "<p>Es ist stockfinster.</p><p>Sie werden wahrscheinlich von einem Grue gefressen.</p>",
+    "<p>Il fait nuit noire.</p><p>Vous risquez d'être mangé par une grue.</p>",
+    "<p>Es negro como boca de lobo.</p><p>Es probable que te coma una grue.</p>",
+    "<p>É breu.</p><p>É provável que você seja comido por um grue.</p>",
+    "<p>Mae'n ddu traw.</p><p>Rydych chi'n debygol o gael eich bwyta gan grue.</p>",
+    "<p>Det är kolsvart.</p><p>Du kommer sannolikt att bli uppäten av en grue.</p>"
+  ]
+  const grues = gruesArr.length;
+  let grueCount = 0;
+  let zorkCoords = [0, 0];
+  let grueCoords = [0, 0];
+
+  const x_max = 40;
+  const x_min = 10;
+  const y_max = 90;
+  const y_min = 10;
+
+  function flashGrue(bool) {
+    const num = randomNum(1, 10);
+    if (num % 3 === 0) {
+      grueCoords[0] = randomNum(1, 40)
+      grueCoords[1] = randomNum(y_min, 60)
+      seeGrue.style.left = `${grueCoords[0]}vw`;
+      seeGrue.style.top = `${grueCoords[1]}vh`;
+      seeGrue.classList.toggle("flash-grue", bool)
+      setTimeout(() => {
+        seeGrue.classList.toggle("flash-grue", false)
+      }, 1000)
+    }
+  }
+
+  function eaten() {
+    zorkCoords[0] = randomNum(x_min, x_max)
+    zorkCoords[1] = randomNum(y_min, y_max)
+    zork.style.left = `${zorkCoords[0]}vw`;
+    zork.style.top = `${zorkCoords[1]}vh`;
+    zork.innerHTML = gruesArr[grueCount];
+    if (grueCount >= grues - 1) {
+      grueCount = 0;
+    } else {
+      grueCount += 1
+    }
+  }
+  eaten()
+  setInterval(eaten, 4000)
+  setInterval(flashGrue, 5000)
+</script>
+
+</html>
