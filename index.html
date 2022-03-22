@@ -4,15 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="christopher eaton's portfolio site">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&family=Raleway:wght@800&display=swap"
-    rel="stylesheet">
-  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&family=Raleway:wght@800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'">
 
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="shapes.css">
+  <link rel="preload" href="shapes.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <script defer src="https://cdn.jsdelivr.net/npm/kute.js@2.2.2/dist/kute.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
   <script defer src="https://d3js.org/d3.v7.min.js"></script>
@@ -40,7 +40,7 @@
             <a class="nav-link" href="#contact">Contact</a>
           </li>
         </ul>
-        <button class="navbar-toggler" type="button">
+        <button class="navbar-toggler" type="button" aria-label="toggle nav">
           <div class="menu back navbar-icon">
             <label>
               <input type="checkbox">
@@ -67,7 +67,7 @@
             <a class="nav-link nav-link-vertical" href="#contact">Contact</a>
           </li>
         </ul>
-        <button class="menu-close" type="button">&times;</button>
+        <button class="menu-close" type="button" aria-label="close menu">&times;</button>
 
 
       </div>
@@ -141,7 +141,7 @@
     </section>
 
     <section id="projects" class="section-3">
-      <button class="work-icons-container grid-transformer">
+      <button class="work-icons-container grid-transformer" aria-label="change projects view">
         <i data-feather="grid" class="hidden-icon grid-icon"></i>
         <i data-feather="layers" class="layers-icon"></i>
       </button>
@@ -222,17 +222,19 @@
         </ul>
         <ul class="footer-section">
           <li>
-            <a class="nav-link" href="https://gist.github.com/eatoncw"><i class="fas fa-code"></i></a>
+            <a class="nav-link" href="https://gist.github.com/eatoncw" aria-label="go to github gists"><i
+                class="fas fa-code"></i></a>
           </li>
           <li>
-            <a class="nav-link" href="https://github.com/eatoncw"><i class="fab fa-github"></i></a>
+            <a class="nav-link" href="https://github.com/eatoncw" aria-label="go to github"><i
+                class="fab fa-github"></i></a>
           </li>
           <li>
-            <a class="nav-link" href="https://stackoverflow.com/users/6780313/eaton9000"><i
-                class="fab fa-stack-overflow"></i></a>
+            <a class="nav-link" href="https://stackoverflow.com/users/6780313/eaton9000"
+              aria-label="go to stack overflow"><i class="fab fa-stack-overflow"></i></a>
           </li>
           <li>
-            <a class="nav-link" href="https://www.linkedin.com/in/christopherweaton/"><i
+            <a class="nav-link" href="https://www.linkedin.com/in/christopherweaton/" aria-label="go to linkedin"><i
                 class="fab fa-linkedin-in"></i></a>
           </li>
         </ul>
