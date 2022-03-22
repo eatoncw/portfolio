@@ -15,10 +15,12 @@ export default async function barChart(data, {} = {}, colors = []) {
     bottom: MARGIN_BOTTOM,
   };
 
+  if (!data) return;
   // construct the main svg
   const svg = initChart(width, HEIGHT);
-  const { Y, yScale, yFormat } = addYAxis(svg, data, HEIGHT, width, margins);
-  const { X, xScale, I } = addXAxis(svg, data, width, HEIGHT, margins);
+  const { Y, yScale, yFormat } =
+    addYAxis(svg, data, HEIGHT, width, margins) || {};
+  const { X, xScale, I } = addXAxis(svg, data, width, HEIGHT, margins) || {};
   const bars = addBars({
     svg,
     I,
@@ -48,6 +50,7 @@ function initChart(width, height) {
 }
 
 function addYAxis(svg, data, height, width, margins) {
+  if (!data) return;
   const Y = data.map((item) => item.value);
   const yType = d3.scaleLinear;
   const yRange = [height - margins.bottom, margins.top];
