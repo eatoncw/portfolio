@@ -31,10 +31,10 @@ function renderProjects() {
   >
     <div class="project-content">
       <a href="${project.imgHref}" target="_blank" class="project-thumb-link">
-        <div>
-          <div class="project-img-container">
+        <div class="project-img-wrapper">
+          <figure class="project-img-container">
             <img src="img/${project.img}" alt="${project.title}" />
-          </div>
+          </figure>
         </div>
       </a>
       <div class="project-head-container">
@@ -60,11 +60,40 @@ function renderProjects() {
       </div>
     </div>
   </div> `;
+
+  const projectIsometricTemplate = (project, i) => html`<div
+    class="grid-item grid-item-single"
+    }
+  >
+    <div class="project-content">
+      <a
+        href="${project.imgHref}"
+        target="_blank"
+        class="project-thumb-link cover"
+      >
+        <div class="project-img-wrapper">
+          <figure class="project-img-container">
+            <img src="img/${project.img}" alt="${project.title}" />
+            <span class="shadow cover"></span>
+          </figure>
+        </div>
+      </a>
+    </div>
+  </div> `;
+
   const shuffled = _ in window === undefined ? projects : _.shuffle(projects);
   const allProjects = html`${shuffled.map((proj, i) => {
     return projectTemplate(proj, i);
   })}`;
+
+  const allIsometricProjects = html`${shuffled.map((proj, i) => {
+    return projectIsometricTemplate(proj, i);
+  })}`;
   render(allProjects, document.querySelector(".projects-container"));
+  render(
+    allIsometricProjects,
+    document.querySelector(".isometric-projects-container")
+  );
 }
 
 function handleBlobs() {
@@ -229,6 +258,26 @@ function handleHeaderMenu() {
   });
 }
 
+async function transformWorkGrid() {
+  const el = document.querySelector(".grid-transformer");
+  const workContainer = document.querySelector(".projects-container");
+  const isometricWorkContainer = document.querySelector(
+    ".isometric-projects-container"
+  );
+  const items = workContainer.querySelectorAll(".grid-item");
+  let gridView = true;
+  el.addEventListener("click", (e) => {
+    const gridIcon = document.querySelector(".grid-icon");
+    const layersIcon = document.querySelector(".layers-icon");
+    gridIcon.classList.toggle("hidden-icon", !gridView);
+    layersIcon.classList.toggle("hidden-icon", gridView);
+    workContainer.classList.toggle("grid-show", !gridView);
+    isometricWorkContainer.classList.toggle("isometric-show", gridView);
+
+    gridView = !gridView;
+  });
+}
+
 (() => {
   let headerObserver;
   renderProjects();
@@ -246,4 +295,5 @@ function handleHeaderMenu() {
     headerObserver = createHeaderObserver();
   }, 100);
   animationObservers();
+  transformWorkGrid();
 })();

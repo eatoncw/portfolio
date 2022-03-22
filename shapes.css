@@ -69,3 +69,135 @@
   background-size: cover;
   background-image: url("./img/spacer.svg");
 }
+
+.work-icons-container {
+  position: absolute;
+  right: 10%;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+.work-icons-container svg {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  position: absolute;
+}
+
+.work-icons-container:after {
+  content: "";
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  height: 60px;
+  width: 60px;
+  transform: translate(-10px, -10px);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: opacity 500ms;
+}
+
+.work-icons-container:hover:after {
+  opacity: 1;
+}
+
+.grid-icon {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  transition-delay: 300ms;
+  animation: grid-spinner 4000ms;
+  animation-iteration-count: infinite;
+}
+
+.layers-icon {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  animation: layers 4000ms;
+  animation-iteration-count: infinite;
+}
+
+.grid-icon rect:nth-of-type(1) {
+  animation: color-changer 5000ms linear;
+  animation-iteration-count: infinite;
+}
+
+.grid-icon rect:nth-of-type(2) {
+  animation: color-changer 5000ms linear;
+  animation-delay: 100ms;
+  animation-iteration-count: infinite;
+}
+
+.grid-icon rect:nth-of-type(3) {
+  animation: color-changer 5000ms linear;
+  animation-delay: 200ms;
+  animation-iteration-count: infinite;
+}
+
+.grid-icon rect:nth-of-type(4) {
+  animation: color-changer 5000ms linear;
+  animation-delay: 300ms;
+  animation-iteration-count: infinite;
+}
+
+.hidden-icon {
+  opacity: 0;
+}
+
+.layers-icon polygon,
+.layers-icon polyline {
+  animation: color-changer2 4000ms;
+  animation-iteration-count: infinite;
+}
+
+@keyframes grid-spinner {
+  0% {
+    transform: rotate(0turn) scale(1);
+  }
+  20% {
+    transform: rotate(0.25turn) scale(1.2);
+  }
+  100% {
+    transform: rotate(0.25turn) scale(1);
+  }
+}
+
+@keyframes layers {
+  0% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes color-changer {
+  0% {
+    stroke: var(--peach);
+  }
+  50% {
+    stroke: var(--blue);
+  }
+  100% {
+    stroke: var(--peach);
+  }
+}
+
+@keyframes color-changer2 {
+  0% {
+    stroke: var(--light-violet);
+  }
+  50% {
+    stroke: var(--blue);
+  }
+  100% {
+    stroke: var(--light-violet);
+  }
+}
