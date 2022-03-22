@@ -73,12 +73,16 @@
 .work-icons-container {
   position: absolute;
   right: 10%;
+  padding: 0;
+  background: none;
+  border: none;
 }
 
 .work-icons-container svg {
   width: 40px;
   height: 40px;
   cursor: pointer;
+  position: absolute;
 }
 
 .work-icons-container:after {
@@ -103,8 +107,17 @@
 }
 
 .grid-icon {
-  /* display: none; */
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  transition-delay: 300ms;
   animation: grid-spinner 4000ms;
+  animation-iteration-count: infinite;
+}
+
+.layers-icon {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  animation: layers 4000ms;
   animation-iteration-count: infinite;
 }
 
@@ -131,11 +144,8 @@
   animation-iteration-count: infinite;
 }
 
-.layers-icon {
-  display: none;
-
-  animation: layers 4000ms;
-  animation-iteration-count: infinite;
+.hidden-icon {
+  opacity: 0;
 }
 
 .layers-icon polygon,
@@ -158,13 +168,13 @@
 
 @keyframes layers {
   0% {
-    transform: scale(1);
-  }
-  50% {
     transform: scale(1.1);
   }
+  50% {
+    transform: scale(0.8);
+  }
   100% {
-    transform: scale(1);
+    transform: scale(1.1);
   }
 }
 
