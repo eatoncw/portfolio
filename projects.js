@@ -15,6 +15,15 @@ export default [
   },
   {
     title: "Next.js e-commerce site",
+    titleLinkName: "Sierra Nevada",
+    titleLinkHref: "https://sierranevada.com/",
+    img: "sierra-nevada.png",
+    imgHref: "https://sierranevada.com/",
+    body: "Developed features across the site, including custom PDP and cart components using Shopify's GraphQL API.",
+    technologies: ["Next.js", "Shopify", "GraphQL", "TypeScript"],
+  },
+  {
+    title: "Next.js e-commerce site",
     titleLinkName: "Bamboo Sushi",
     titleLinkHref: "https://bamboosushi.com/",
     img: "bamboo-sushi.jpg",
